@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootWave : MonoBehaviour
@@ -9,6 +7,10 @@ public class ShootWave : MonoBehaviour
     public bool ShootSwitch { set { isReadyToFireOff = value; } }
     private bool isReadyToFireOff = true;
 
+    private void ShootRing()
+    {
+        WaveAnim.Play();
+    }
     void Start()
     {
         WaveAnim.Init(this);
@@ -19,12 +21,10 @@ public class ShootWave : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && isReadyToFireOff)
         {
             isReadyToFireOff = false;
-            
         }
         if(!isReadyToFireOff)
         {
-            WaveAnim.Play();
-            //Physics.
+            ShootRing();
         }
     }
 }
