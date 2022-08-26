@@ -6,7 +6,6 @@ public class ShootWave : MonoBehaviour
 
     public bool ShootSwitch { set { isReadyToFireOff = value; } }
     private bool isReadyToFireOff = true;
-    public float SomeTestV = 1f;
 
     private void ShootRing()
     {
@@ -15,7 +14,6 @@ public class ShootWave : MonoBehaviour
     void Start()
     {
         WaveAnim.Init(this);
-        SomeTestV *= 10f;
     }
 
     void Update()
