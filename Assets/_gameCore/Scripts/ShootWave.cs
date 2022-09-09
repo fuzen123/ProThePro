@@ -16,7 +16,7 @@ public class ShootWave : ShootStyle
         WaveAnim.Init(this);        
     }
 
-    public override void Shoot()
+    public override void Shoot(Vector3 dir)
     {
         if(isReadyToFireOff)
         {

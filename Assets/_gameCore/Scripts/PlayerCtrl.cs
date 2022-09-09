@@ -19,8 +19,7 @@ public class PlayerCtrl : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log(charRotate.LookingDirection());
-            shootStyle.Shoot();
+            shootStyle.Shoot(charRotate.LookingDirection());
         }
     }
 }

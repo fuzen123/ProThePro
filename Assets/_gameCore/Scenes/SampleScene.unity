@@ -509,8 +509,8 @@ GameObject:
   m_Component:
   - component: {fileID: 151983841}
   - component: {fileID: 151983844}
-  - component: {fileID: 151983842}
   - component: {fileID: 151983843}
+  - component: {fileID: 151983842}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -542,10 +542,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 151983840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ac9ca50e3bc3524aa3aa152812f434a, type: 3}
+  m_Script: {fileID: 11500000, guid: 419584ccfafe47a4aae152e0c03cf788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaveAnim: {fileID: 1568299692}
+  projectil: {fileID: 6915382712302814626, guid: b15d31576c477434593e8d304bc63b47, type: 3}
 --- !u!114 &151983843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterModel: {fileID: 1045620318}
-  angleRotation: 10
+  angleRotation: 30
 --- !u!114 &151983844
 MonoBehaviour:
   m_ObjectHideFlags: 0
