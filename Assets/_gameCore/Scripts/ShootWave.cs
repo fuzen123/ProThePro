@@ -1,6 +1,6 @@
 using UnityEngine;
-
-public class ShootWave : MonoBehaviour
+using System.Collections;
+public class ShootWave : ShootStyle
 {
     public WaveAnimation WaveAnim;
 
@@ -13,18 +13,23 @@ public class ShootWave : MonoBehaviour
     }
     void Start()
     {
-        WaveAnim.Init(this);
+        WaveAnim.Init(this);        
     }
 
-    void Update()
+    public override void Shoot()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && isReadyToFireOff)
+        if(isReadyToFireOff)
         {
             isReadyToFireOff = false;
+            StartCoroutine(PlayShoot());
         }
-        if(!isReadyToFireOff)
+    }
+    private IEnumerator PlayShoot()
+    {
+        while(!isReadyToFireOff)
         {
             ShootRing();
+            yield return null;
         }
     }
 }
