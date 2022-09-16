@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    [SerializeField] ShootStyle shootStyle;
-    [SerializeField] CharacterRotating charRotate;
+    [SerializeField] private ShootStyle shootStyle;
+    [SerializeField] private CharacterRotating charRotate;
 
-    void Update()
+    private void Update()
     {
         charRotate.UpdateRotation();
-
+        shootStyle.UpdateShooting();
         if(Input.GetKeyDown(KeyCode.Space))
         {
             shootStyle.Shoot(charRotate.LookingDirection());

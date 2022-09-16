@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public class ZigzagAnimalMove : AnimalMoving
 {
-    public float frequency = 10.0f; // Speed of sine movement
-    public float magnitude = 1.0f; //  Size of sine movement, its the amplitude of the side curve
+    [SerializeField] private float frequency = 10.0f;
+    [SerializeField] private float magnitude = 1.0f;
 
     public override void Update()
     {

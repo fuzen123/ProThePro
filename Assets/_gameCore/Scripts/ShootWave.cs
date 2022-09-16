@@ -21,15 +21,14 @@ public class ShootWave : ShootStyle
         if(isReadyToFireOff)
         {
             isReadyToFireOff = false;
-            StartCoroutine(PlayShoot());
         }
     }
-    private IEnumerator PlayShoot()
+
+    public override void UpdateShooting()
     {
-        while(!isReadyToFireOff)
+        if(!isReadyToFireOff)
         {
             ShootRing();
-            yield return null;
         }
     }
 }

@@ -2,22 +2,39 @@ using UnityEngine;
 
 public class StraightShoot : ShootStyle
 {
-    [SerializeField] private GameObject projectil;
-
-    private GameObject currentProjectil = null;
-    private bool canShoot = true;
+    [SerializeField] private Projectil projectil;
+    [SerializeField] private float flyRange = 10f;
+    [SerializeField] private float projectilMaxVelocity = 15f;
+    private Projectil currentProjectil = null;
+    private bool isShooting = false;
 
     public override void Shoot(Vector3 direction)
     {
-        if(canShoot)
+        if(!isShooting)
         {
-            canShoot = false;
+            isShooting = true;
             currentProjectil = Instantiate(projectil);
-            currentProjectil.GetComponent<Projectil>().StartFly(this, direction);
+            currentProjectil.StartFly(direction, projectilMaxVelocity);
         }
     }
-    public void ResetShoot()
+
+    public override void UpdateShooting()
     {
-        canShoot = true;
+        if(isShooting)
+        {
+            currentProjectil.Moving();
+            if(currentProjectil.DetectHit())
+            {
+                isShooting = false;
+                Destroy(currentProjectil.Hit.transform.gameObject);
+                Destroy(currentProjectil.gameObject);
+            }
+            if(Vector3.Distance(transform.position, currentProjectil.transform.position) > flyRange)
+            {
+                isShooting = false;
+                //todo: destroy objects in some range
+                Destroy(currentProjectil.gameObject);
+            }
+        }
     }
 }

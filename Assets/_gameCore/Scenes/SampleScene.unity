@@ -542,10 +542,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 151983840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 419584ccfafe47a4aae152e0c03cf788, type: 3}
+  m_Script: {fileID: 11500000, guid: 189e0aae0e5ab844cbbb77bf7da52d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectil: {fileID: 6915382712302814626, guid: b15d31576c477434593e8d304bc63b47, type: 3}
+  projectil: {fileID: 4887911659627275315, guid: b15d31576c477434593e8d304bc63b47, type: 3}
+  flyTime: 1
+  projectilMaxVelocity: 15
 --- !u!114 &151983843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7651,7 +7653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1459618448
 Transform:
   m_ObjectHideFlags: 0
@@ -7940,7 +7942,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1636895980
 PrefabInstance:
@@ -8571,7 +8573,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2247885610994920513, guid: fe216f273a7a3d1478a902e4d086efca, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2247885610994920513, guid: fe216f273a7a3d1478a902e4d086efca, type: 3}
       propertyPath: m_LocalPosition.x
