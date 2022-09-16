@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimalMoving : MonoBehaviour
@@ -14,8 +12,7 @@ public class AnimalMoving : MonoBehaviour
         enabled = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Vector3 direction = _player.position - transform.position;
         direction = Quaternion.Euler(0f, 50f, 0f) * direction;

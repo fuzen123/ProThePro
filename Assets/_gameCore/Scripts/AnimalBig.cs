@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AnimalBig : DestroyableTargets
 {
@@ -10,6 +9,7 @@ public class AnimalBig : DestroyableTargets
     {
         animalMoving = GetComponent<AnimalMoving>();
     }
+
     public override void TargetHit()
     {
         if (isAlive)
