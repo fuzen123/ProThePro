@@ -1,14 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class PartShoot : ShootStyle
+public class TriShoot : ShootStyle
 {
     [SerializeField] private Projectil projectil;
     [SerializeField] private float flyTime = 1f;
     [SerializeField] private float projectilMaxVelocity = 15f;
     private List<Projectil> projectils = new List<Projectil>(3);
-    private float[] angles = { 0f, 12f, 24f };
+    private float[] triAngles = { -30f, 0f, 30f};
     private bool isShooting = false;
     private float timeElapsed = 0f;
 
@@ -16,43 +15,49 @@ public class PartShoot : ShootStyle
     {
         if (!isShooting)
         {
-            StartCoroutine(ShootWithDelay(direction));
+            for (int i = 0; i < 3; i++)
+            {
+                var triDir = Quaternion.Euler(0f, triAngles[i], 0f) * direction;
+                Projectil p = Instantiate(projectil);
+                projectils.Add(p);
+                p.StartFly(triDir, projectilMaxVelocity);
+
+            }
             isShooting = true;
         }
     }
 
     public override void UpdateShooting()
     {
-        if (isShooting)
+        if(isShooting)
         {
             timeElapsed += Time.deltaTime;
             for (int i = 0; i < projectils.Count; i++)
             {
                 projectils[i].Moving();
+                if (projectils[i].DetectHit())
+                {
+                    Hit(projectils[i]);
+                }
             }
-            if (timeElapsed > flyTime)
+            if(timeElapsed > flyTime)
             {
                 DestroyProjectils();
             }
         }
     }
-    private IEnumerator ShootWithDelay(Vector3 dir)
+    private void Hit(Projectil projectil)
     {
-        for (int i = 0; i < 3; i++)
-        {
-            var triDir = Quaternion.Euler(0f, angles[i], 0f) * dir;
-            Projectil p = Instantiate(projectil);
-            projectils.Add(p);
-            p.StartFly(triDir, projectilMaxVelocity);
-            yield return new WaitForSeconds(0.25f);
-            timeElapsed -= 0.25f;
-        }        
+        projectils.Remove(projectil);
+        Destroy(projectil.Hit.transform.gameObject);
+        Destroy(projectil.gameObject);
     }
     private void DestroyProjectils()
     {
         for (int i = 0; i < projectils.Count; i++)
         {
             Destroy(projectils[i].gameObject);
+            projectils[i] = null;
         }
         projectils.Clear();
         timeElapsed = 0f;
