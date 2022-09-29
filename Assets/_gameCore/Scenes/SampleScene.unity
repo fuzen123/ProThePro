@@ -550,7 +550,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 753c3c0dafab8e548a0412529afc1cc1, type: 2}
   - {fileID: 11400000, guid: 4fee1c409a99c0e45b7ba984dbbad011, type: 2}
   - {fileID: 11400000, guid: 49b540767c9842d44984f40a2b09337c, type: 2}
-  activeShootTytpe: {fileID: 11400000, guid: 753c3c0dafab8e548a0412529afc1cc1, type: 2}
+  activeShootType: {fileID: 11400000, guid: 753c3c0dafab8e548a0412529afc1cc1, type: 2}
 --- !u!114 &151983843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,9 +577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b843beffab954c64289184afea7ee012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootStyle: {fileID: 11400000, guid: 4fee1c409a99c0e45b7ba984dbbad011, type: 2}
   charRotate: {fileID: 151983843}
-  shooting: {fileID: 0}
+  shooting: {fileID: 151983842}
 --- !u!1001 &152420921
 PrefabInstance:
   m_ObjectHideFlags: 0

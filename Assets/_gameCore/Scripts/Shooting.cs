@@ -25,6 +25,6 @@ public class Shooting : MonoBehaviour
     }
     public void UpgradeShoot()
     {
-        
+        activeShootType.Upgrade();
     }
 }

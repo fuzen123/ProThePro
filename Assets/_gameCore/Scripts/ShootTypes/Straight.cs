@@ -40,4 +40,9 @@ public class Straight : ShootingType
             }
         }
     }
+
+    public override void Upgrade()
+    {
+        projectilMaxVelocity += 5f;
+    }
 }

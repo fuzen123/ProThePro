@@ -21,5 +21,9 @@ public class PlayerCtrl : MonoBehaviour
         {
             shooting.UpgradeShoot();
         }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }

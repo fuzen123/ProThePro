@@ -90,4 +90,9 @@ public class PartDelay : ShootingType
         timeElapsed = 0f;
         isShooting = false;
     }
+
+    public override void Upgrade()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -35,4 +35,9 @@ public class Wave : ShootingType
             ShootRing();
         }
     }
+
+    public override void Upgrade()
+    {
+        throw new System.NotImplementedException();
+    }
 }

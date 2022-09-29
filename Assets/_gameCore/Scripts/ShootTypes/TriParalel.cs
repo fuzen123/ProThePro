@@ -65,4 +65,9 @@ public class TriParalel : ShootingType
         timeElapsed = 0f;
         isShooting = false;
     }
+
+    public override void Upgrade()
+    {
+        throw new System.NotImplementedException();
+    }
 }
