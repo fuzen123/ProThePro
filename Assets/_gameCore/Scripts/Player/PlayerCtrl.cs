@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    [SerializeField] private ShootStyle shootStyle;
+    [SerializeField] private ShootingType shootStyle;
     [SerializeField] private CharacterRotating charRotate;
+    [SerializeField] private Shooting shooting;
 
     private void Update()
     {

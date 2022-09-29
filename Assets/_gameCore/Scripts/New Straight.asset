@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe5bbdb84c52ae499633fe06b1b8f0e, type: 3}
+  m_Name: New Straight
+  m_EditorClassIdentifier: 
+  projectil: {fileID: 4887911659627275315, guid: b15d31576c477434593e8d304bc63b47, type: 3}
+  flyRange: 10
+  projectilMaxVelocity: 15

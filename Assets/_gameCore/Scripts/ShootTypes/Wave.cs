@@ -1,24 +1,28 @@
-using UnityEngine;
 using System.Collections;
-public class ShootWave : ShootStyle
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(menuName = "Shoot type/Wave")]
+public class Wave : ShootingType
 {
     public WaveAnimation WaveAnim;
-
+    private WaveAnimation activeRing;
     public bool ShootSwitch { set { isReadyToFireOff = value; } }
     private bool isReadyToFireOff = true;
 
     private void ShootRing()
     {
-        WaveAnim.Play();
-    }
-    void Start()
-    {
-        //WaveAnim.Init(this);        
+        activeRing.Play();
     }
 
     public override void Shoot(Vector3 dir)
     {
-        if(isReadyToFireOff)
+        if(activeRing == null)
+        {
+            activeRing = Instantiate(WaveAnim);
+            activeRing.Init(this);
+        }
+        if (isReadyToFireOff)
         {
             isReadyToFireOff = false;
         }
@@ -26,7 +30,7 @@ public class ShootWave : ShootStyle
 
     public override void UpdateShooting()
     {
-        if(!isReadyToFireOff)
+        if (!isReadyToFireOff)
         {
             ShootRing();
         }
