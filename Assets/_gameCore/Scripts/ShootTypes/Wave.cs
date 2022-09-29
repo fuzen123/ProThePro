@@ -7,9 +7,9 @@ public class Wave : ShootingType
 {
     public WaveAnimation WaveAnim;
     private WaveAnimation activeRing;
-    public bool ShootSwitch { set { isReadyToFireOff = value; } }
-    private bool isReadyToFireOff = true;
-
+    public bool ShootSwitch { set { isShooting = value; } }
+    private bool isShooting = false;
+    public override bool IsShootUpdating { get => isShooting; }
     private void ShootRing()
     {
         activeRing.Play();
@@ -22,15 +22,15 @@ public class Wave : ShootingType
             activeRing = Instantiate(WaveAnim);
             activeRing.Init(this);
         }
-        if (isReadyToFireOff)
+        if (!isShooting)
         {
-            isReadyToFireOff = false;
+            isShooting = true;
         }
     }
 
     public override void UpdateShooting()
     {
-        if (!isReadyToFireOff)
+        if (isShooting)
         {
             ShootRing();
         }

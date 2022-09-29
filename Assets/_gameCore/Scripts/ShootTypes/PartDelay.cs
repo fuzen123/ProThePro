@@ -14,7 +14,7 @@ public class PartDelay : ShootingType
     private bool startShoot = false;
     private Vector3 shootDirection;
     private int numberOfProjectils = 0;
-
+    public override bool IsShootUpdating { get => isShooting; }
     private void OnEnable()
     {
         timeElapsed = 0f;

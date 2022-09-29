@@ -10,7 +10,7 @@ public class Straight : ShootingType
     [SerializeField] private float projectilMaxVelocity = 15f;
     private Projectil currentProjectil = null;
     private bool isShooting = false;
-
+    public override bool IsShootUpdating { get => isShooting; }
     public override void Shoot(Vector3 direction)
     {
         if (!isShooting)

@@ -7,10 +7,11 @@ public class TriParalel : ShootingType
     [SerializeField] private Projectil projectil;
     [SerializeField] private float flyTime = 1f;
     [SerializeField] private float projectilMaxVelocity = 15f;
+    [SerializeField] private float[] triAngles = { -30f, 0f, 30f };
     private List<Projectil> projectils = new List<Projectil>(3);
-    private float[] triAngles = { -30f, 0f, 30f };
     private bool isShooting = false;
     private float timeElapsed = 0f;
+    public override bool IsShootUpdating { get => isShooting; }
 
     public override void Shoot(Vector3 direction)
     {

@@ -25,7 +25,7 @@ public class WaveAnimation : MonoBehaviour
         transform.localScale = Vector3.MoveTowards(transform.localScale, waverange, spreadSpeed * Time.deltaTime);
         if(transform.localScale.x >= waverange.x)
         {
-            shooterwave.ShootSwitch = true;
+            shooterwave.ShootSwitch = false;
             transform.localScale = startSize;
 
         }
