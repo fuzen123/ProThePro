@@ -1,22 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveAnimation : MonoBehaviour
 {
-    public LayerMask hittargets;
-    private MeshRenderer mr;
+    [SerializeField] private LayerMask hittargets;
+    [SerializeField] private Vector3 waverange = new Vector3(2f, 1f, 2f);
+    [SerializeField] private float spreadSpeed = 2f;
+
     private float rad;
     private Wave shooterwave = null;
     private Vector3 startSize;
-    public Vector3 waverange = new Vector3(2f, 1f, 2f);
-    public float spreadSpeed = 2f;
     private RaycastHit[] hits = new RaycastHit[10];
     public void Init(Wave sw)
     {
         shooterwave = sw;
         startSize = transform.localScale;
-        mr = GetComponent<MeshRenderer>();
+        var mr = GetComponent<MeshRenderer>();
         rad = mr.bounds.extents.x;
     }
 

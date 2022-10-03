@@ -14,7 +14,11 @@ public class Wave : ShootingType
     {
         activeRing.Play();
     }
-
+    private void OnEnable()
+    {
+        activeRing = null;
+        isShooting = false;
+    }
     public override void Shoot(Vector3 dir)
     {
         if(activeRing == null)
