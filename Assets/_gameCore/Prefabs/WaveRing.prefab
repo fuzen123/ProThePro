@@ -98,4 +98,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   waverange: {x: 25, y: 1, z: 25}
-  spreadSpeed: 15
+  spreadSpeed: 25

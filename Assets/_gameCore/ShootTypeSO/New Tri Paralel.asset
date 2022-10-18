@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectil: {fileID: 4887911659627275315, guid: b15d31576c477434593e8d304bc63b47, type: 3}
   flyTime: 1
-  projectilMaxVelocity: 15
+  projectilMaxVelocity: 25
   triAngles:
   - -30
   - 0

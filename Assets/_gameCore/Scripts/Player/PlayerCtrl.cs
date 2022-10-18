@@ -4,10 +4,16 @@ public class PlayerCtrl : MonoBehaviour
 {
     [SerializeField] private CharacterRotating charRotate;
     [SerializeField] private Shooting shooting;
+    [SerializeField] private TargetCircle targetcircle;
 
+    private void Start()
+    {
+        targetcircle.Initialize(this);
+    }
     private void Update()
     {
         charRotate.UpdateRotation();
+        targetcircle.UpdateTargetCircle();
         shooting.Tick();
         if(Input.GetKeyDown(KeyCode.Space))
         {
