@@ -10,6 +10,7 @@ public class Wave : ShootingType
     public bool ShootSwitch { set { isShooting = value; } }
     private bool isShooting = false;
     public override bool IsShootUpdating { get => isShooting; }
+    
     private void ShootRing()
     {
         activeRing.Play();
@@ -42,6 +43,11 @@ public class Wave : ShootingType
 
     public override void Upgrade()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("No upgrade available");
+    }
+
+    public override float PositionProgress()
+    {
+        return activeRing.Progress;
     }
 }

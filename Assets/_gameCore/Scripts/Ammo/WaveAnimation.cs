@@ -10,6 +10,8 @@ public class WaveAnimation : MonoBehaviour
     private Wave shooterwave = null;
     private Vector3 startSize;
     private RaycastHit[] hits = new RaycastHit[10];
+
+    public float Progress { get { return (transform.localScale.x - startSize.x) / (waverange.x - startSize.x); } }
     public void Init(Wave sw)
     {
         shooterwave = sw;

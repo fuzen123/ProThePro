@@ -11,6 +11,12 @@ public class Straight : ShootingType
     private Projectil currentProjectil = null;
     private bool isShooting = false;
     public override bool IsShootUpdating { get => isShooting; }
+
+    public override float PositionProgress()
+    {
+        return currentProjectil.transform.position.sqrMagnitude / (flyRange * flyRange);
+    }
+
     public override void Shoot(Vector3 direction)
     {
         if (!isShooting)

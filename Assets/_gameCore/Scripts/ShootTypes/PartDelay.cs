@@ -93,6 +93,11 @@ public class PartDelay : ShootingType
 
     public override void Upgrade()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("No upgrade available");
+    }
+
+    public override float PositionProgress()
+    {
+        return timeElapsed / flyTime;
     }
 }
